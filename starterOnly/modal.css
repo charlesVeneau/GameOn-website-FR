@@ -41,6 +41,12 @@ img {
 .header-logo {
   float: left;
 }
+
+@media screen and (max-width: 768px) {
+  .header-logo img {
+    height: 19px;
+  }
+}
 .main-navbar {
   float: right;
 }
@@ -53,7 +59,6 @@ img {
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
-  font-family: Roboto, sans-serif;
 }
 
 .topnav a:hover {
@@ -65,7 +70,22 @@ img {
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 8px;
+}
+
+.topnav a span {
+  position: relative;
+}
+
+.topnav a span::after {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .topnav .icon {
@@ -73,12 +93,22 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .topnav {
+    margin: 33px 30px;
+  }
   .topnav a {
     display: none;
   }
   .topnav a.icon {
     float: right;
     display: block;
+    -webkit-text-stroke: 1px white;
+    padding: 0;
+    margin-right: 0;
+  }
+  .topnav a.icon:hover {
+    color: #ff0000;
+    background-color: transparent;
   }
 }
 
@@ -105,7 +135,10 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+
+    -webkit-text-stroke: 1px white;
+    padding: 0;
+    margin-right: 0;
   }
 }
 
@@ -129,7 +162,7 @@ main {
   padding: 2em;
   color: #fff;
   padding: 0.75rem 2.5rem;
-  border-radius: 1rem;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -327,7 +360,7 @@ input[data-error]::after {
   background: #fe142f;
   display: block;
   margin: 0 auto;
-  border-radius: 7px;
+  border-radius: 8px;
   font-size: 1rem;
   padding: 12px 82px;
   color: #fff;
@@ -406,11 +439,11 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  border-radius: 10px;
+  border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
-  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.25);
   margin-bottom: 10px;
 }
 .hero-content {
@@ -468,7 +501,6 @@ input[data-error]::after {
   padding: 0;
   font-size: 0.83rem;
   margin: 60px 0 30px;
-  font-weight: bolder;
   font-family: "Roboto", sans-serif;
 }
 .hero-section > .btn-signup {
@@ -496,7 +528,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 2.6rem;
     white-space: normal;
   }
   .hero-text {
