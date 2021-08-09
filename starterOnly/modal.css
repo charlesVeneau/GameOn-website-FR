@@ -42,6 +42,10 @@ img {
   float: left;
 }
 
+.header-logo img {
+  height: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .header-logo img {
     height: 19px;
