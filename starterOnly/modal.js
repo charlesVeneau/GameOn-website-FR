@@ -12,6 +12,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeButton = document.querySelector(".close");
+const modalForm = document.getElementById("modalForm");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -28,3 +29,9 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 }
+
+// Form submit listener
+modalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("form submit");
+});
