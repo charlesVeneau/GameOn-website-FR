@@ -54,7 +54,7 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form id="modalForm" action="#" method="post">
+            <form id="modalForm" action="index.html" method="post">
               <div class="formData">
                 <label for="first">Prénom</label><br />
                 <input
@@ -62,8 +62,9 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                /><br />
+                />
+                <small class="text--small"></small>
+                <br />
               </div>
               <div class="formData">
                 <label for="last">Nom</label><br />
@@ -72,7 +73,7 @@
                   type="text"
                   id="last"
                   name="last"
-                /><br />
+                /><small class="text--small"></small><br />
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br />
@@ -81,7 +82,7 @@
                   type="email"
                   id="email"
                   name="email"
-                /><br />
+                /><small class="text--small"></small><br />
               </div>
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br />
@@ -90,13 +91,13 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br />
+                /><small class="text--small"></small><br />
               </div>
               <div class="formData">
                 <label for="quantity"
                   >À combien de tournois GameOn avez-vous déjà participé
                   ?</label
-                ><br />
+                ><small class="text--small"></small><br />
                 <input
                   type="number"
                   class="text-control"
@@ -177,16 +178,12 @@
               </div>
 
               <div class="formData">
-                <input
-                  class="checkbox-input"
-                  type="checkbox"
-                  id="checkbox1"
-                  required
-                />
+                <input class="checkbox-input" type="checkbox" id="checkbox1" />
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <small class="text--small"></small>
                 <br />
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">

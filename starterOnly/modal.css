@@ -89,7 +89,6 @@ img {
   height: 1px;
   width: 100%;
   background-color: #fff;
-  z-index: 10;
 }
 .topnav a.active span::after {
   position: absolute;
@@ -99,11 +98,18 @@ img {
   height: 1px;
   width: 100%;
   background-color: #fff;
-  z-index: 10;
 }
 
 .topnav .icon {
   display: none;
+}
+
+.text--small {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #ff0000;
+  font-size: 0.55rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -262,6 +268,10 @@ input {
   border-radius: 8px;
   height: 48px;
 }
+.formData {
+  position: relative;
+  padding-bottom: 20px;
+}
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.55rem;
@@ -386,6 +396,9 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+.btn-submit {
+  margin-top: 12px;
 }
 /* custom select styles */
 .custom-select {
