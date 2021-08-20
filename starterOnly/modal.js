@@ -81,9 +81,11 @@ function closeModal() {
 function errMessage(element, type) {
   if (!type) {
     element.smallElt.textContent = element.errMsg;
+    element.input.classList.add("input--error");
     return type;
   } else {
     element.smallElt.textContent = "";
+    element.input.classList.remove("input--error");
     return type;
   }
 }
@@ -125,9 +127,17 @@ function isValidContest(element) {
 
 //Check if the consent is true
 function isValidConsent(element) {
-  return element.input.checked
-    ? errMessage(element, true)
-    : errMessage(element, false);
+  if (element.input.checked) {
+    element.input.parentElement
+      .querySelector(".checkbox-icon")
+      .classList.remove("input--error");
+    return errMessage(element, true);
+  } else {
+    element.input.parentElement
+      .querySelector(".checkbox-icon")
+      .classList.add("input--error");
+    return errMessage(element, false);
+  }
 }
 
 // Form submit listener
