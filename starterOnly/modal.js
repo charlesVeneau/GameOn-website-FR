@@ -13,6 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeButton = document.querySelector(".close");
 const modalForm = document.getElementById("modalForm");
+const successMessage = document.getElementById("successMessage");
 
 //Form Elements
 const formInputs = {
@@ -71,10 +72,25 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+//Clean the value of the inputs
+function cleanModalForm() {
+  formInputs.firstname.input.value = "";
+  formInputs.lastName.input.value = "";
+  formInputs.email.input.value = "";
+  formInputs.birthdate.input.value = "";
+  formInputs.contest.input.value = "";
+  formInputs.consent.input.checked = false;
+}
+
 // Close modal form
 function closeModal() {
   modalbg.style.display = "none";
   //check if the modal is the correct content
+  if (successMessage.className) {
+    modalForm.className = "";
+    successMessage.className = "";
+    cleanModalForm();
+  }
 }
 
 //add error message
@@ -92,8 +108,13 @@ function errMessage(element, type) {
 
 //check if a name input is valid
 function hasValue(element) {
+  // regex to check if the input is only alphabetic
+  let textRegex = /\D/;
   //il n'y a pas de message d'erreur
-  if (element.input.value.trim().length < 2) {
+  if (
+    element.input.value.trim().length < 2 &&
+    textRegex.test(element.input.value.trim())
+  ) {
     return errMessage(element, false);
   } else {
     return errMessage(element, true);
@@ -154,7 +175,8 @@ modalForm.addEventListener("submit", (e) => {
   let consent = isValidConsent(formInputs.consent);
 
   if (firstName && lastName && email && birthdate && contest && consent) {
-    console.log("the form is valid");
+    modalForm.className = "sliding-out";
+    successMessage.className = "sliding-in";
   } else {
     console.log("the form is not valid");
   }

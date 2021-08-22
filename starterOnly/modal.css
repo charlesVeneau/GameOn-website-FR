@@ -249,6 +249,31 @@ main {
   margin: 15px auto;
 }
 
+#modalForm.sliding-out {
+  animation: sliding-out 400ms forwards;
+}
+
+#successMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  height: 800px;
+  transform: translateX(450px);
+  opacity: 0;
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+}
+
+#successMessage.sliding-in {
+  animation: sliding-in 400ms 200ms forwards;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 0.78rem;
@@ -600,5 +625,25 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes sliding-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-450px);
+  }
+}
+
+@keyframes sliding-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
