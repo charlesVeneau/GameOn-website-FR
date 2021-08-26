@@ -339,7 +339,7 @@ input[data-error]::after {
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid #279e7a;
+  border: 1px solid #fff;
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -370,6 +370,9 @@ input[data-error]::after {
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
+}
+.checkbox-input:checked + .checkbox-label .checkbox-icon {
+  border-color: #279e7a;
 }
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: #279e7a;

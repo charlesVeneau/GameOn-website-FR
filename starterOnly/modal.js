@@ -109,12 +109,9 @@ function errMessage(element, type) {
 //check if a name input is valid
 function hasValue(element) {
   // regex to check if the input is only alphabetic
-  let textRegex = /\D/;
+
   //il n'y a pas de message d'erreur
-  if (
-    element.input.value.trim().length < 2 &&
-    textRegex.test(element.input.value.trim())
-  ) {
+  if (element.input.value.trim().length < 2) {
     return errMessage(element, false);
   } else {
     return errMessage(element, true);
