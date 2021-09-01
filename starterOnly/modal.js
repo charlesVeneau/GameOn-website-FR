@@ -160,7 +160,7 @@ function isValidConsent(element) {
 
 // Form submit listener
 modalForm.addEventListener("submit", (e) => {
-  //Prevent form submission
+  //Prevent form submission default behaviour
   e.preventDefault();
 
   //check every required inputs
@@ -174,7 +174,5 @@ modalForm.addEventListener("submit", (e) => {
   if (firstName && lastName && email && birthdate && contest && consent) {
     modalForm.className = "sliding-out";
     successMessage.className = "sliding-in";
-  } else {
-    console.log("the form is not valid");
   }
 });
